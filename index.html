@@ -5,7 +5,7 @@
 <title>QA Engineer — Manual · API · UI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   * {
     margin: 0;
@@ -14,18 +14,19 @@
   }
 
   :root {
-    --bg: #0D1117;
-    --card: #161B22;
-    --border: #30363D;
-    --text: #C9D1D9;
-    --text-strong: #F0F6FC;
-    --muted: #8B949E;
-    --accent: #58A6FF;
-    --green: #3FB950;
+    --bg: #444444;
+    --card: #222222;
+    --border: #555555;
+    --text: #DDDDDD;
+    --text-strong: #FFFFFF;
+    --muted: #999999;
+    --accent: #FFAA11;
+    --accent-dim: #DD8811;
+    --green: #88CC44;
   }
 
   body {
-    font-family: 'Inter', -apple-system, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -57,7 +58,7 @@
 
   header h1::before {
     content: "$ ";
-    color: var(--green);
+    color: var(--accent);
     font-weight: 500;
   }
 
@@ -91,8 +92,8 @@
   /* Секции */
   section {
     background-color: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid #333333;
+    border-radius: 10px;
     padding: 22px 26px;
     margin-bottom: 16px;
   }
@@ -102,7 +103,7 @@
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -114,7 +115,7 @@
     display: inline-block;
     width: 6px;
     height: 6px;
-    background-color: var(--green);
+    background-color: var(--accent);
     border-radius: 50%;
   }
 
@@ -151,8 +152,8 @@
   }
 
   .tag {
-    background-color: #21262D;
-    border: 1px solid var(--border);
+    background-color: #2D2D2D;
+    border: 1px solid #3A3A3A;
     border-radius: 4px;
     padding: 2px 8px;
     font-size: 12.5px;
@@ -162,8 +163,8 @@
 
   .tag.accent {
     color: var(--accent);
-    border-color: #1F6FEB;
-    background-color: rgba(31, 111, 235, 0.1);
+    border-color: var(--accent-dim);
+    background-color: rgba(255, 170, 17, 0.1);
   }
 
   /* Опыт */
@@ -175,7 +176,7 @@
 
   .job h3 {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--text-strong);
     margin-bottom: 4px;
   }
@@ -208,14 +209,14 @@
     content: "▸";
     position: absolute;
     left: 0;
-    color: var(--muted);
+    color: var(--accent);
   }
 
   code {
     font-family: 'JetBrains Mono', monospace;
     font-size: 12.5px;
-    background-color: #21262D;
-    border: 1px solid var(--border);
+    background-color: #2D2D2D;
+    border: 1px solid #3A3A3A;
     border-radius: 4px;
     padding: 1px 6px;
     color: var(--accent);
@@ -233,17 +234,18 @@
     }
     header { border-bottom-color: #D0D7DE; }
     header h1 { color: #24292F; }
-    header h1::before { color: #1A7F37; }
-    .subtitle { color: #0969DA; }
+    header h1::before { color: #CC7700; }
+    .subtitle { color: #CC7700; }
     .contacts a { color: #24292F; border-bottom-color: #D0D7DE; }
     section h2 { color: #57606A; }
     section p, .job ul li { color: #24292F; }
     .job h3 { color: #24292F; }
-    .job h3 .company { color: #0969DA; }
+    .job h3 .company { color: #CC7700; }
+    .job ul li::before { color: #CC7700; }
     .job-meta { color: #57606A; }
     .tag { background-color: #EAEEF2; border-color: #D0D7DE; color: #24292F; }
-    .tag.accent { background-color: #DDF4FF; border-color: #54AEFF; color: #0969DA; }
-    code { background-color: #EAEEF2; border-color: #D0D7DE; color: #0969DA; }
+    .tag.accent { background-color: #FFF3D6; border-color: #FFAA11; color: #CC7700; }
+    code { background-color: #EAEEF2; border-color: #D0D7DE; color: #CC7700; }
   }
 </style>
 </head>
