@@ -6,7 +6,7 @@ Junior QA Engineer. Resume, test cases, checklists, bug reports.
 
 ## Contents
 - `index.html` — resume (HTML/CSS)
-- [`petstore/`](./petstore/) — тестовое задание: ЗооМаркет (CRM для продавцов)
+- [`petstore/`](./petstore/) — test-task Petstore
 
 ## 📫 Contact Information
 - Email: workshop2met7cen@gmail.com
