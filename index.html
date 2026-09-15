@@ -2,180 +2,215 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Алексеев Игорь — Резюме</title>
+<title>Алексеев Игорь — QA Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+
   body {
-    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-    color: #222;
-    line-height: 1.5;
-    font-size: 13px;
+    background-color: #444444;
+    color: #EEEEEE;
+    line-height: 1.55;
+    font-size: 14px;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 780px;
     margin: 0 auto;
-    padding: 30px 40px;
-    max-width: 800px;
   }
-  h1 {
-    font-size: 24px;
-    margin: 0 0 4px 0;
-    color: #1a1a1a;
+
+  /* Шапка */
+  .container_header_main {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffaa11;
+    border-radius: 10px;
+    padding: 24px 24px;
+    margin-bottom: 20px;
   }
-  .subtitle {
-    font-size: 15px;
-    color: #444;
-    margin-bottom: 12px;
-    font-weight: 600;
-  }
-  .contacts {
-    font-size: 13px;
-    color: #333;
+
+  .container_header_main h1 {
+    font-size: 26px;
+    color: #222222;
+    font-weight: 700;
     margin-bottom: 4px;
   }
-  .contacts span {
-    margin-right: 15px;
-  }
-  .meta {
-    font-size: 12.5px;
-    color: #555;
-    margin-bottom: 18px;
-  }
-  h2 {
+
+  .subtitle {
     font-size: 15px;
-    color: #1a1a1a;
-    border-bottom: 2px solid #2c5f8a;
-    padding-bottom: 4px;
-    margin-top: 22px;
-    margin-bottom: 10px;
+    color: #222222;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13.5px;
+  }
+
+  .contacts a {
+    color: #222222;
+    text-decoration: none;
+    background-color: #DD8811;
+    border-radius: 10px;
+    padding: 5px 12px;
+    transition: all 0.4s ease;
+    font-weight: 500;
+  }
+
+  .contacts a:hover {
+    background-color: #222222;
+    color: #FFAA11;
+  }
+
+  /* Секции */
+  .card {
+    background-color: #222222;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+
+  .card h2 {
+    font-size: 13px;
+    color: #FFAA11;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
   }
-  h3 {
-    font-size: 14px;
-    margin: 12px 0 2px 0;
-    color: #1a1a1a;
+
+  .card h3 {
+    font-size: 15px;
+    color: #FFFFFF;
+    margin: 14px 0 2px 0;
+    font-weight: 500;
   }
+
   .job-meta {
     font-size: 12.5px;
-    color: #666;
-    margin-bottom: 6px;
+    color: #999999;
+    margin-bottom: 8px;
   }
+
   ul {
     margin: 6px 0 10px 0;
     padding-left: 20px;
   }
+
   li {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+    color: #DDDDDD;
   }
+
   p {
+    color: #DDDDDD;
     margin: 6px 0;
   }
-  .skills-block {
-    margin-bottom: 8px;
+
+  code {
+    background: #333333;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 12.5px;
+    color: #FFAA11;
   }
-  .skills-block strong {
-    display: block;
-    color: #2c5f8a;
-    margin-bottom: 3px;
-    font-size: 13px;
+
+  .stack {
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    color: #DDDDDD;
   }
+
+  .stack strong {
+    color: #FFAA11;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+
   @media print {
-    body { padding: 20px 30px; }
-    h2, h3 { page-break-after: avoid; }
-    ul { page-break-inside: avoid; }
+    body {
+      background-color: #FFFFFF;
+      color: #222222;
+      padding: 20px;
+    }
+    .container_header_main { background-color: #FFAA11; }
+    .card { background-color: #F5F5F5; }
+    .card h2 { color: #CC7700; border-bottom-color: #DDDDDD; }
+    .card h3 { color: #222222; }
+    .stack { color: #333333; }
+    .stack strong { color: #CC7700; }
+    li, p { color: #333333; }
+    code { background: #EEEEEE; color: #CC7700; }
+    .job-meta { color: #666666; }
+    .contacts a { background-color: #DD8811; color: #222222; }
   }
 </style>
 </head>
 <body>
 
-<h1>Алексеев Игорь</h1>
-<div class="subtitle">QA Engineer</div>
+<div class="container">
 
-<div class="contacts">
-  <span>workshop2met7cen@gmail.com</span>
+  <div class="container_header_main">
+    <h1>Алексеев Игорь</h1>
+    <div class="subtitle">QA Engineer — Manual · API · UI</div>
+    <div class="contacts">
+      <a href="mailto:workshop2met7cen@gmail.com">workshop2met7cen@gmail.com</a>
+      <a href="https://github.com/2met7cen">github.com/2met7cen</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Обо мне</h2>
+    <p>QA-инженер с 3+ годами опыта в тестировании и технической поддержке. Специализируюсь на ручном тестировании веб-приложений: UI, REST API, интеграционное и регрессионное тестирование. Пишу тест-кейсы, чек-листы и баг-репорты. Есть опыт написания автотестов на Pytest и Playwright, работы с SQL и Postman.</p>
+  </div>
+
+  <div class="card">
+    <h2>Стек</h2>
+    <div class="stack"><strong>Тестирование:</strong> ручное, функциональное, интеграционное, регрессионное, smoke, сквозное</div>
+    <div class="stack"><strong>API:</strong> REST, HTTP/HTTPS, Postman, DevTools, JSON, XML</div>
+    <div class="stack"><strong>Автотесты:</strong> Python, Pytest, Requests, Playwright</div>
+    <div class="stack"><strong>БД:</strong> PostgreSQL (SELECT, WHERE, JOIN), базово MongoDB</div>
+    <div class="stack"><strong>Инструменты:</strong> Git, Docker, Bash, Redmine, Postman</div>
+    <div class="stack"><strong>Прочее:</strong> HTML, CSS, базово JavaScript, Linux, Windows</div>
+  </div>
+
+  <div class="card">
+    <h2>Опыт</h2>
+
+    <h3>Cleverpark · QA Engineer</h3>
+    <div class="job-meta">Авг 2024 — Янв 2026 · Санкт-Петербург</div>
+    <ul>
+      <li>Ручное тестирование веб-приложений и клиент-серверных систем (UI и API).</li>
+      <li>Функциональное, интеграционное, регрессионное и smoke-тестирование.</li>
+      <li>Тестирование REST API через Postman: проверка запросов/ответов, JSON, XML, кодов ответа.</li>
+      <li>Анализ сетевых запросов и ошибок через DevTools.</li>
+      <li>Составление тестовой документации: тест-кейсы, чек-листы, баг-репорты.</li>
+      <li>Работа с PostgreSQL: <code>SELECT</code>, <code>WHERE</code>, <code>JOIN</code>.</li>
+      <li>Восстановление и документирование API устаревшего сервиса без документации.</li>
+    </ul>
+
+    <h3>Камчатстат · Инженер по тестированию</h3>
+    <div class="job-meta">Сен 2018 — Авг 2020 · Петропавловск-Камчатский</div>
+    <ul>
+      <li>Тестирование обновлений ПО и оборудования перед внедрением.</li>
+      <li>Регрессионное тестирование после установки, проверка корректности работы.</li>
+      <li>Диагностика и устранение неисправностей ПО и железа.</li>
+    </ul>
+  </div>
+
 </div>
-<div class="meta">
-  Мужчина, 28 лет, Санкт-Петербург · Готов к удалённой работе, гибриду, офису · Готов к командировкам
-</div>
-
-<div class="meta">
-  <strong>Специализации:</strong> Функциональный тестировщик, Manual QA, Технический писатель<br>
-  <strong>Тип занятости:</strong> Полная занятость<br>
-  <strong>Формат работы:</strong> Удалённо, гибрид, на месте работодателя
-</div>
-
-<h2>Опыт работы: 3 года 6 месяцев</h2>
-
-<h3>Авг 2024 — Янв 2026 · Cleverpark, Санкт-Петербург</h3>
-<div class="job-meta">Тестировщик (Manual QA) с функциями технической поддержки · 1 год 6 мес</div>
-<p><strong>Проект:</strong> автоматизированные парковочные системы (серверная часть, клиентские приложения, оборудование).</p>
-<ul>
-  <li>Ручное тестирование веб-приложений и клиент-серверных систем: UI и API.</li>
-  <li>Функциональное, интеграционное, регрессионное, smoke-тестирование.</li>
-  <li>Тестирование REST API через Postman: проверка HTTP-запросов/ответов (GET, POST), JSON, XML, кодов ответа.</li>
-  <li>Работа с DevTools: анализ сетевых запросов, ошибок консоли, кэша браузера.</li>
-  <li>Составление тестовой документации: тест-кейсы, чек-листы, баг-репорты, отчёты.</li>
-  <li>Восстановил и задокументировал API устаревшего сервиса без документации: собрал эндпоинты, описал методы, параметры, форматы ответов.</li>
-  <li>Работа с PostgreSQL: SELECT, WHERE, JOIN, анализ структуры, поиск данных.</li>
-  <li>Выявление и описание дефектов, взаимодействие с разработчиками.</li>
-  <li>Дополнительно: поддержка операторов, анализ обратной связи, работа с оборудованием.</li>
-</ul>
-
-<h3>Сен 2018 — Авг 2020 · Камчатстат, Петропавловск-Камчатский</h3>
-<div class="job-meta">Инженер по тестированию и технической поддержке · 2 года</div>
-<ul>
-  <li>Тестировал обновления ПО и оборудования перед внедрением, проводил регрессионное тестирование после установки.</li>
-  <li>Проверял корректность работы АРМ, офисной техники, сетевого оборудования.</li>
-  <li>Диагностировал и устранял неисправности ПО и железа, работал с серверами.</li>
-  <li>Анализировал обратную связь пользователей, выявлял повторяющиеся проблемы, оформлял отчёты.</li>
-</ul>
-
-<h2>Навыки</h2>
-
-<div class="skills-block">
-  <strong>Тестирование</strong>
-  <ul>
-    <li>Ручное тестирование веб-приложений: UI, API.</li>
-    <li>Виды тестирования: функциональное, интеграционное, регрессионное, smoke, системное, сквозное.</li>
-    <li>Тестовая документация: тест-кейсы, чек-листы, баг-репорты, планы тестирования, стратегии, программы и методики испытаний.</li>
-    <li>Понимание жизненного цикла ПО, основ программной инженерии, управления требованиями.</li>
-    <li>Анализ ТЗ и согласование плана работ.</li>
-  </ul>
-</div>
-
-<div class="skills-block">
-  <strong>Технические навыки</strong>
-  <ul>
-    <li>Клиент-серверная архитектура, REST API, HTTP/HTTPS, методы GET, POST.</li>
-    <li>JSON, XML, HTML, CSS, базово JavaScript.</li>
-    <li>Инструменты мониторинга трафика: Postman, DevTools.</li>
-    <li>Базы данных: PostgreSQL (SELECT, WHERE, JOIN), базово MongoDB.</li>
-    <li>Git, Docker, Bash.</li>
-    <li>ОС: Windows, Linux, Android, iOS, macOS — базово.</li>
-    <li>Понимание принципов кэширования (браузерный кэш, серверный кэш Redis/Memcached — базово).</li>
-  </ul>
-</div>
-
-<div class="skills-block">
-  <strong>Дополнительно</strong>
-  <ul>
-    <li>Английский язык — чтение технической документации.</li>
-    <li>Базовое понимание LLM и AI-агентов.</li>
-  </ul>
-</div>
-
-<h2>Обо мне</h2>
-<p>QA-инженер с техническим образованием и опытом в тестировании и техподдержке. Владею методами ручного тестирования, техниками тест-дизайна, умею составлять тестовую документацию. Работал с REST API, Postman, DevTools, SQL (PostgreSQL), Git, Docker. Восстанавливал и документировал API без документации, писал Telegram-ботов с интеграцией через API. Стремлюсь развиваться в функциональном тестировании и приносить пользу команде.</p>
-
-<h2>Образование</h2>
-<p><strong>Камчатский Политехнический Техникум, 2017</strong><br>
-Среднее специальное образование</p>
-
-<h2>Дополнительно</h2>
-<ul>
-  <li>Гражданство: Россия</li>
-  <li>Разрешение на работу: Россия</li>
-  <li>Командировки: готов</li>
-  <li>Желательное время в пути до работы: не имеет значения</li>
-</ul>
 
 </body>
 </html>
