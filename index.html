@@ -3,249 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <title>QA Engineer — Manual · API · UI</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-
-  :root {
-    --bg: #444444;
-    --card: #222222;
-    --border: #555555;
-    --text: #DDDDDD;
-    --text-strong: #FFFFFF;
-    --muted: #999999;
-    --accent: #FFAA11;
-    --accent-dim: #DD8811;
-    --green: #88CC44;
+    font-family: 'Roboto', sans-serif;
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+    background-color: #444444;
+    color: #EEEEEE;
+    line-height: 1.55;
     font-size: 14px;
-    padding: 48px 20px;
-    min-height: 100vh;
+    padding: 40px 20px;
   }
 
   .container {
-    max-width: 820px;
+    max-width: 780px;
     margin: 0 auto;
   }
 
   /* Шапка */
-  header {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 28px;
-    margin-bottom: 28px;
+  .container_header_main {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffaa11;
+    border-radius: 10px;
+    padding: 24px 24px;
+    margin-bottom: 20px;
   }
 
-  header h1 {
-    font-size: 32px;
+  .container_header_main h1 {
+    font-size: 26px;
+    color: #222222;
     font-weight: 700;
-    color: var(--text-strong);
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  header h1::before {
-    content: "$ ";
-    color: var(--accent);
-    font-weight: 500;
+    margin-bottom: 4px;
   }
 
   .subtitle {
     font-size: 15px;
-    color: var(--accent);
+    color: #222222;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
 
   .contacts {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
     font-size: 13.5px;
   }
 
   .contacts a {
-    color: var(--text);
+    color: #222222;
     text-decoration: none;
-    border-bottom: 1px dashed var(--border);
-    padding-bottom: 1px;
-    transition: color 0.2s ease, border-color 0.2s ease;
+    background-color: #DD8811;
+    border-radius: 10px;
+    padding: 5px 12px;
+    transition: all 0.4s ease;
+    font-weight: 500;
   }
 
   .contacts a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    background-color: #222222;
+    color: #FFAA11;
   }
 
   /* Секции */
-  section {
-    background-color: var(--card);
-    border: 1px solid #333333;
+  .card {
+    background-color: #222222;
     border-radius: 10px;
-    padding: 22px 26px;
+    padding: 20px 24px;
     margin-bottom: 16px;
   }
 
-  section h2 {
-    font-size: 12.5px;
-    color: var(--muted);
+  .card h2 {
+    font-size: 13px;
+    color: #FFAA11;
+    border-bottom: 1px solid #444444;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     font-weight: 700;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 
-  section h2::before {
-    content: "";
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    background-color: var(--accent);
-    border-radius: 50%;
-  }
-
-  section p {
-    color: var(--text);
-    font-size: 14px;
-  }
-
-  /* Стек */
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-
-  .stack:last-child { margin-bottom: 0; }
-
-  .stack-label {
-    font-size: 12.5px;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    min-width: 110px;
-    padding-top: 2px;
-  }
-
-  .stack-values {
-    font-size: 13.5px;
-    color: var(--text);
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .tag {
-    background-color: #2D2D2D;
-    border: 1px solid #3A3A3A;
-    border-radius: 4px;
-    padding: 2px 8px;
-    font-size: 12.5px;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--text);
-  }
-
-  .tag.accent {
-    color: var(--accent);
-    border-color: var(--accent-dim);
-    background-color: rgba(255, 170, 17, 0.1);
-  }
-
-  /* Опыт */
-  .job {
-    margin-bottom: 22px;
-  }
-
-  .job:last-child { margin-bottom: 0; }
-
-  .job h3 {
+  .card h3 {
     font-size: 15px;
+    color: #FFFFFF;
+    margin: 14px 0 2px 0;
     font-weight: 500;
-    color: var(--text-strong);
-    margin-bottom: 4px;
-  }
-
-  .job h3 .company {
-    color: var(--accent);
   }
 
   .job-meta {
     font-size: 12.5px;
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    margin-bottom: 10px;
+    color: #999999;
+    margin-bottom: 8px;
   }
 
-  .job ul {
-    list-style: none;
-    padding: 0;
+  ul {
+    margin: 6px 0 10px 0;
+    padding-left: 20px;
   }
 
-  .job ul li {
-    position: relative;
-    padding-left: 18px;
-    margin-bottom: 5px;
-    color: var(--text);
-    font-size: 13.5px;
+  li {
+    margin-bottom: 4px;
+    color: #DDDDDD;
   }
 
-  .job ul li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
+  p {
+    color: #DDDDDD;
+    margin: 6px 0;
   }
 
   code {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    background-color: #2D2D2D;
-    border: 1px solid #3A3A3A;
-    border-radius: 4px;
+    background: #333333;
     padding: 1px 6px;
-    color: var(--accent);
+    border-radius: 4px;
+    font-family: 'Consolas', monospace;
+    font-size: 12.5px;
+    color: #FFAA11;
+  }
+
+  .stack {
+    font-size: 13.5px;
+    margin-bottom: 6px;
+    color: #DDDDDD;
+  }
+
+  .stack strong {
+    color: #FFAA11;
+    margin-right: 6px;
+    font-weight: 500;
   }
 
   @media print {
     body {
       background-color: #FFFFFF;
-      color: #24292F;
+      color: #222222;
       padding: 20px;
     }
-    section {
-      background-color: #F6F8FA;
-      border-color: #D0D7DE;
-    }
-    header { border-bottom-color: #D0D7DE; }
-    header h1 { color: #24292F; }
-    header h1::before { color: #CC7700; }
-    .subtitle { color: #CC7700; }
-    .contacts a { color: #24292F; border-bottom-color: #D0D7DE; }
-    section h2 { color: #57606A; }
-    section p, .job ul li { color: #24292F; }
-    .job h3 { color: #24292F; }
-    .job h3 .company { color: #CC7700; }
-    .job ul li::before { color: #CC7700; }
-    .job-meta { color: #57606A; }
-    .tag { background-color: #EAEEF2; border-color: #D0D7DE; color: #24292F; }
-    .tag.accent { background-color: #FFF3D6; border-color: #FFAA11; color: #CC7700; }
-    code { background-color: #EAEEF2; border-color: #D0D7DE; color: #CC7700; }
+    .container_header_main { background-color: #FFAA11; }
+    .card { background-color: #F5F5F5; }
+    .card h2 { color: #CC7700; border-bottom-color: #DDDDDD; }
+    .card h3 { color: #222222; }
+    .stack { color: #333333; }
+    .stack strong { color: #CC7700; }
+    li, p { color: #333333; }
+    code { background: #EEEEEE; color: #CC7700; }
+    .job-meta { color: #666666; }
+    .contacts a { background-color: #DD8811; color: #222222; }
   }
 </style>
 </head>
@@ -253,115 +162,53 @@
 
 <div class="container">
 
-  <header>
+  <div class="container_header_main">
     <h1>QA Engineer</h1>
     <div class="subtitle">Manual · API · UI · Automation</div>
     <div class="contacts">
       <a href="mailto:workshop2met7cen@gmail.com">workshop2met7cen@gmail.com</a>
       <a href="https://github.com/2met7cen">github.com/2met7cen</a>
     </div>
-  </header>
+  </div>
 
-  <section>
+  <div class="card">
     <h2>Обо мне</h2>
     <p>QA-инженер с 3+ годами опыта в тестировании и технической поддержке. Специализируюсь на ручном тестировании веб-приложений: UI, REST API, интеграционное и регрессионное тестирование. Пишу тест-кейсы, чек-листы и баг-репорты. Есть опыт написания автотестов на Pytest и Playwright, работы с SQL и Postman.</p>
-  </section>
+  </div>
 
-  <section>
+  <div class="card">
     <h2>Стек</h2>
+    <div class="stack"><strong>Тестирование:</strong> ручное, функциональное, интеграционное, регрессионное, smoke, сквозное</div>
+    <div class="stack"><strong>API:</strong> REST, HTTP/HTTPS, Postman, DevTools, JSON, XML</div>
+    <div class="stack"><strong>Автотесты:</strong> Python, Pytest, Requests, Playwright</div>
+    <div class="stack"><strong>БД:</strong> PostgreSQL (SELECT, WHERE, JOIN), базово MongoDB</div>
+    <div class="stack"><strong>Инструменты:</strong> Git, Docker, Bash, Redmine, Postman</div>
+    <div class="stack"><strong>Прочее:</strong> HTML, CSS, базово JavaScript, Linux, Windows</div>
+  </div>
 
-    <div class="stack">
-      <div class="stack-label">Testing:</div>
-      <div class="stack-values">
-        <span class="tag accent">manual</span>
-        <span class="tag accent">functional</span>
-        <span class="tag">integration</span>
-        <span class="tag">regression</span>
-        <span class="tag">smoke</span>
-        <span class="tag">e2e</span>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="stack-label">API:</div>
-      <div class="stack-values">
-        <span class="tag accent">REST</span>
-        <span class="tag">HTTP/HTTPS</span>
-        <span class="tag">Postman</span>
-        <span class="tag">DevTools</span>
-        <span class="tag">JSON</span>
-        <span class="tag">XML</span>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="stack-label">Automation:</div>
-      <div class="stack-values">
-        <span class="tag accent">Python</span>
-        <span class="tag">Pytest</span>
-        <span class="tag">Requests</span>
-        <span class="tag">Playwright</span>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="stack-label">Databases:</div>
-      <div class="stack-values">
-        <span class="tag accent">PostgreSQL</span>
-        <span class="tag">MongoDB (basic)</span>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="stack-label">Tools:</div>
-      <div class="stack-values">
-        <span class="tag">Git</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Bash</span>
-        <span class="tag">Redmine</span>
-      </div>
-    </div>
-
-    <div class="stack">
-      <div class="stack-label">Other:</div>
-      <div class="stack-values">
-        <span class="tag">HTML</span>
-        <span class="tag">CSS</span>
-        <span class="tag">JavaScript (basic)</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Windows</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
+  <div class="card">
     <h2>Опыт</h2>
 
-    <div class="job">
-      <h3>QA Engineer <span class="company">· Cleverpark</span></h3>
-      <div class="job-meta">Aug 2024 — Jan 2026 · Санкт-Петербург</div>
-      <ul>
-        <li>Ручное тестирование веб-приложений и клиент-серверных систем (UI и API).</li>
-        <li>Функциональное, интеграционное, регрессионное и smoke-тестирование.</li>
-        <li>Тестирование REST API через Postman: проверка запросов/ответов, JSON, XML, кодов ответа.</li>
-        <li>Анализ сетевых запросов и ошибок через DevTools.</li>
-        <li>Составление тестовой документации: тест-кейсы, чек-листы, баг-репорты.</li>
-        <li>Работа с PostgreSQL: <code>SELECT</code>, <code>WHERE</code>, <code>JOIN</code>.</li>
-        <li>Восстановление и документирование API устаревшего сервиса без документации.</li>
-      </ul>
-    </div>
+    <h3>Cleverpark · QA Engineer</h3>
+    <div class="job-meta">Авг 2024 — Янв 2026 · Санкт-Петербург</div>
+    <ul>
+      <li>Ручное тестирование веб-приложений и клиент-серверных систем (UI и API).</li>
+      <li>Функциональное, интеграционное, регрессионное и smoke-тестирование.</li>
+      <li>Тестирование REST API через Postman: проверка запросов/ответов, JSON, XML, кодов ответа.</li>
+      <li>Анализ сетевых запросов и ошибок через DevTools.</li>
+      <li>Составление тестовой документации: тест-кейсы, чек-листы, баг-репорты.</li>
+      <li>Работа с PostgreSQL: <code>SELECT</code>, <code>WHERE</code>, <code>JOIN</code>.</li>
+      <li>Восстановление и документирование API устаревшего сервиса без документации.</li>
+    </ul>
 
-    <div class="job">
-      <h3>Инженер по тестированию <span class="company">· Камчатстат</span></h3>
-      <div class="job-meta">Sep 2018 — Aug 2020 · Петропавловск-Камчатский</div>
-      <ul>
-        <li>Тестирование обновлений ПО и оборудования перед внедрением.</li>
-        <li>Регрессионное тестирование после установки, проверка корректности работы.</li>
-        <li>Диагностика и устранение неисправностей ПО и железа.</li>
-      </ul>
-    </div>
-
-  </section>
+    <h3>Камчатстат · Инженер по тестированию</h3>
+    <div class="job-meta">Сен 2018 — Авг 2020 · Петропавловск-Камчатский</div>
+    <ul>
+      <li>Тестирование обновлений ПО и оборудования перед внедрением.</li>
+      <li>Регрессионное тестирование после установки, проверка корректности работы.</li>
+      <li>Диагностика и устранение неисправностей ПО и железа.</li>
+    </ul>
+  </div>
 
 </div>
 
